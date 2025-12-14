@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Theme variables */
+:root {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #0f172a;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --border-color: #1e293b;
+  --accent-color: #4f46e5;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+}
+
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --accent-color: #10b981;
+  --success-color: #059669;
+  --danger-color: #dc2626;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animated subtle gradient background for login */
+.bg-animated-gradient {
+  background: linear-gradient(120deg, #0f172a, #0b1220, #071126);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glow when price changes */
+.price-glow {
+  box-shadow: 0 6px 24px rgba(99,102,241,0.08), 0 0 12px rgba(99,102,241,0.06) inset;
+  transform: translateY(-2px);
+}
+
+/* Live dot */
+.live-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px rgba(16,185,129,0.9);
+}
+
+/* Smooth number transition baseline */
+.num-anim {
+  transition: transform 260ms ease, opacity 260ms ease;
+}
