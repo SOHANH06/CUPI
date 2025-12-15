@@ -10,6 +10,12 @@ A real-time stock broker dashboard application built with React, Tailwind CSS, N
 - *Multi-user Support*: Multiple users can have independent dashboards with different subscriptions
 - *Asynchronous Updates*: All price updates are sent asynchronously to connected clients
 
+## Technologies Used
+
+- **Frontend**: React, Tailwind CSS, Axios
+- **Backend**: Node.js, Express, WebSocket (ws), CORS
+- **Development**: react-scripts, nodemon
+
 
 ## Project Structure
 
@@ -91,10 +97,3 @@ The application will open at `http://localhost:3000`
 3. Receive `PRICE_UPDATE` messages every second
 4. DOM updates with new prices in real-time
 5. No page refresh needed
-
-## Technologies Used
-
-- **Frontend**: React 18, Tailwind CSS, Axios
-- **Backend**: Node.js, Express, WebSocket (ws), CORS
-- **Development**: react-scripts, nodemon
-
