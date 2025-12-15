@@ -4,19 +4,12 @@ A real-time stock broker dashboard application built with React, Tailwind CSS, N
 
 ## Features
 
-- **User Login**: Email-based login system
-- **Stock Subscriptions**: Subscribe/unsubscribe from supported stocks (GOOG, TSLA, AMZN, META, NVDA)
-- **Real-time Price Updates**: Live price updates via WebSocket every second
-- **Multi-user Support**: Multiple users can have independent dashboards with different subscriptions
-- **Asynchronous Updates**: All price updates are sent asynchronously to connected clients
+- *User Login*: Email-based login system
+- *Stock Subscriptions*: Subscribe/unsubscribe from supported stocks (GOOG, TSLA, AMZN, META, NVDA)
+- *Real-time Price Updates*: Live price updates via WebSocket every second
+- *Multi-user Support*: Multiple users can have independent dashboards with different subscriptions
+- *Asynchronous Updates*: All price updates are sent asynchronously to connected clients
 
-## Supported Stocks
-
-- GOOG (Google)
-- TSLA (Tesla)
-- AMZN (Amazon)
-- META (Meta)
-- NVDA (NVIDIA)
 
 ## Project Structure
 
@@ -99,55 +92,9 @@ The application will open at `http://localhost:3000`
 4. DOM updates with new prices in real-time
 5. No page refresh needed
 
-## Multi-user Scenario Example
-
-**User 1 (alice@example.com):**
-- Subscribed to: GOOG, TSLA
-- Receives price updates only for GOOG and TSLA
-
-**User 2 (bob@example.com):**
-- Subscribed to: AMZN, META, NVDA
-- Receives price updates only for AMZN, META, and NVDA
-
-Both users can have their dashboards open simultaneously, and each receives asynchronous updates for their respective stocks.
-
-## API Endpoints
-
-### REST API
-
-- `POST /api/login` - User login with email
-- `GET /api/stocks` - Get all supported stocks and current prices
-- `POST /api/subscribe` - Subscribe to a stock
-- `POST /api/unsubscribe` - Unsubscribe from a stock
-- `GET /api/subscriptions/:sessionId` - Get user subscriptions
-
-### WebSocket Events
-
-**Client → Server:**
-- `{ type: 'AUTH', sessionId }` - Authenticate WebSocket connection
-
-**Server → Client:**
-- `{ type: 'AUTH_SUCCESS', userId }` - Authentication successful
-- `{ type: 'INITIAL_PRICES', data }` - Initial prices for subscribed stocks
-- `{ type: 'PRICE_UPDATE', data, timestamp }` - Real-time price updates
-- `{ type: 'SUBSCRIPTION_UPDATE', subscriptions }` - Subscription changes
-
 ## Technologies Used
 
 - **Frontend**: React 18, Tailwind CSS, Axios
 - **Backend**: Node.js, Express, WebSocket (ws), CORS
 - **Development**: react-scripts, nodemon
 
-## Price Updates
-
-Stock prices are updated every second using a random generator:
-- Random percentage change between -1% and +1% per update
-- Realistic price movements with decimal precision
-- Includes price change and percentage change tracking
-
-## Notes
-
-- Prices are randomly generated for demonstration purposes
-- User data and subscriptions are stored in memory (not persistent)
-- Session IDs are generated using UUID v4
-- Each WebSocket connection is tracked per user for efficient broadcasting
