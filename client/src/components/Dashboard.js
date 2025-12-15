@@ -9,7 +9,7 @@ const DEFAULT_STOCKS = ['GOOG', 'TSLA', 'AMZN', 'META', 'NVDA'];
 function Dashboard({ user, sessionId, onLogout, theme, onThemeChange }) {
   const [subscriptions, setSubscriptions] = useState([]);
   const [prices, setPrices] = useState({});
-  const [allStocks, setAllStocks] = useState(DEFAULT_STOCKS);
+  const [allStocks] = useState(DEFAULT_STOCKS);
   const [loading, setLoading] = useState(true);
   const [connected, setConnected] = useState(false);
   const changedRef = useRef({});
